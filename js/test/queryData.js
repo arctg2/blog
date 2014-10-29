@@ -12,7 +12,6 @@ var QueryData = (function($) {
                 deferred.resolve(false);
             },
             success : function(xml) {
-                debugger;
                 return deferred.resolve(xml);
             }
         });

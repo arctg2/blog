@@ -31,10 +31,10 @@ app.controller("ShowController", function($scope) {
     $scope.showInfo = function() {
         var url = "http://jofy1004.github.io/blog/data/dataFile.xml"
         QueryData.query(url).done(function(data) {
-            debugger;
             if (data) {
-                $scope.titleInfo = $(data).find("title");
-                $scope.contentInfo = $(data).find("content");
+                /*$scope.titleInfo = $(data).find("title").text();
+                $scope.contentInfo = $(data).find("title").text();*/
+                $scope.titleInfo = "1111";
             }
         });
     }
