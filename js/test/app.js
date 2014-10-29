@@ -32,9 +32,8 @@ app.controller("ShowController", function($scope) {
         var url = "http://jofy1004.github.io/blog/data/dataFile.xml"
         QueryData.query(url).done(function(data) {
             if (data) {
-                /*$scope.titleInfo = $(data).find("title").text();
-                $scope.contentInfo = $(data).find("title").text();*/
-                $scope.titleInfo = "1111";
+                $scope.titleInfo = $(data).find("title").text();
+                $scope.contentInfo = $(data).find("content").text();
             }
         });
     }
