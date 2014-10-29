@@ -6,7 +6,7 @@ var QueryData = (function($) {
         $.ajax({
             url : "http://jofy1004.github.io/blog/data/dataFile.xml",
             dataType : 'xml',
-            type : 'POST',
+            type : 'GET',
             error : function(xml) {
                 alert("加载XML 文件出错！");
                 deferred.resolve(false);
