@@ -4,7 +4,7 @@ var QueryData = (function($) {
     var query = function(paramURL) {
         var deferred = new $.Deferred();
         $.ajax({
-            url : "http://jofy1004.github.io/blog/data/dataFile.xml",
+            url : paramURL,
             dataType : 'xml',
             type : 'GET',
             error : function(xml) {
@@ -12,7 +12,6 @@ var QueryData = (function($) {
                 deferred.resolve(false);
             },
             success : function(xml) {
-                console.log(xml);
                 return deferred.resolve(xml);
             }
         });
@@ -24,7 +23,6 @@ var QueryData = (function($) {
             that = this;
         },
         query : query
-
     }
 })(jQuery);
 
