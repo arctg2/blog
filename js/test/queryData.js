@@ -6,12 +6,13 @@ var QueryData = (function($) {
         $.ajax({
             url : "http://jofy1004.github.io/blog/data/dataFile.xml",
             dataType : 'xml',
-            type : 'GET',
+            type : 'POST',
             error : function(xml) {
                 alert("加载XML 文件出错！");
                 deferred.resolve(false);
             },
             success : function(xml) {
+                console.log(xml);
                 return deferred.resolve(xml);
             }
         });
