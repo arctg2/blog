@@ -25,13 +25,16 @@ app.controller("CalcController", function($scope) {
     };
 });
 
-app.controller("showController", function($scope) {
+app.controller("ShowController", function($scope) {
+    $scope.titleInfo = "";
+    $scope.contentInfo = "";
     $scope.showInfo = function() {
+        console.log("-----");
         var url = "http://jofy1004.github.io/blog/data/dataFile.xml"
         QueryData.query(url).done(function(data) {
             if (data) {
-                $scope.title = $(data).find("title");
-                $scope.content = $(data).find("content");
+                $scope.titleInfo = $(data).find("title");
+                $scope.contentInfo = $(data).find("content");
             }
         });
     }
