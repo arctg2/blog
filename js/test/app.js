@@ -29,19 +29,19 @@ app.controller("ShowController", function($scope) {
     $scope.titleInfo = "";
     $scope.timeInfo = "";
     $scope.contentInfo = "";
-    $scope.showInfo = function() {
-        var url = "http://jofy1004.github.io/blog/data/dataFile.xml"
-        QueryData.query(url).done(function(data) {
-            if (data) {
-                $scope.titleInfo = $(data).find("title").text();
-                $scope.timeInfo = $(data).find("time").text();
-                $scope.contentInfo = $(data).find("content").text();
-            }
-        });
-    }
+    //    $scope.showInfo = function() {
+    var url = "http://jofy1004.github.io/blog/data/dataFile.xml"
+    QueryData.query(url).done(function(data) {
+        if (data) {
+            $scope.titleInfo = $(data).find("title").text();
+            $scope.timeInfo = $(data).find("time").text();
+            $scope.contentInfo = $(data).find("content").text();
+        }
+    });
+    //    }
 
 });
 
-$(function () {
+$(function() {
     $("#boxDiv").draggable();
 });
