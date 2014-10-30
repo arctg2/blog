@@ -33,8 +33,14 @@ app.controller("ShowController", function($scope) {
         QueryData.query(url).done(function(data) {
             if (data) {
                 $scope.titleInfo = $(data).find("title").text();
+                $scope.titleInfo = $(data).find("time").text();
                 $scope.contentInfo = $(data).find("content").text();
             }
         });
     }
+
+});
+
+$(function () {
+    $("#boxDiv").draggable();
 });
