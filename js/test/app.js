@@ -28,11 +28,13 @@ app.controller("WatchController", function($scope, $interpolate) {
     });
 
     $scope.$watch("emailBody", function(value) {
-        $scope.mailTo = "xxx@cccis.com";
+        var emailBody = "Hello {{ to }}：\n{{body}}\n My name is AngelarJS!";
         if (value) {
-            var template = $interpolate(value);
+            var template = $interpolate(emailBody);
+            debugger;
             $scope.previewText = template({
-                to : $scope.mailTo
+                to : $scope.mailTo,
+                body : value
             });
         }
 
@@ -55,9 +57,9 @@ app.controller("CalcController", function($scope) {
 app.controller("FilterController", function($scope, $filter) {
     $scope.person = {
         name : "world"
-    }
-    $scope.$watch("person.name", function(val){
-        $scope.person.nameLower = $filter("lowercase")(val);
+    };
+    $scope.$watch("person.name", function(val) {
+        $scope.person.nameLower = val;
     });
 });
 
@@ -73,6 +75,17 @@ app.controller("ShowController", function($scope) {
             $scope.contentInfo = $(data).find("content").text();
         }
     });
+});
+
+/**
+ * 自定义过滤器，功能：首字母大写，其他小写
+ */
+app.filter("capitalize", function(){
+    return function(input){
+        if(input){
+            return input[0].toUpperCase() + input.slice(1).toLowerCase();
+        }
+    };
 });
 
 $(function() {

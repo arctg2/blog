@@ -5,6 +5,7 @@
     <script src="../js/other/jquery-1.9.1.js"></script>
     <script src="../js/other/angular.js"></script>
     <script src="../js/common/common.date.js"></script>
+    <link href="../css/customCss.css" rel="stylesheet" type="text/css"/>
 
     <script src="../js/test/app.js"></script>
 </head>
@@ -12,14 +13,17 @@
 <div>
     <div ng-controller="FilterController">
         <h4>初级绑定数据</h4>
-        Your name:<input type="text" ng-model="person.name" placeholder="world"/><br/>
+        Your name:<input type="text" ng-model="person.name" placeholder="world"/>
         Hello <b>{{person.name || "world"}}!</b>
 
-        <h4>内置过滤器，字母变大写</h4>
-        Hello <b>{{person.name || "world" | uppercase}}!</b>
+        <h4>内置过滤器，字母变大写：</h4>
+        Hello <b>{{person.name | uppercase}}</b>
 
-        <h4>自定义过滤器，字母变小写</h4>
-        Hello <b>{{person.nameLower}}!</b>
+        <h4>自定义过滤器，首字母大写：</h4>
+        Hello <b>{{person.nameLower | capitalize}}</b>
+
+        <h4>内置过滤器，数字保留2位：</h4>
+        <b>{{person.name | number:2}}</b>
     </div>
 </div>
 <hr/>
@@ -51,6 +55,49 @@
         <textarea ng-model="emailBody"></textarea>
         <pre>{{previewText}}</pre>
     </div>
+</div>
+<hr/>
+
+<div>
+    <h4>Angular内置对象</h4>
+    <b>
+         ng-href
+         ng-src
+         ng-disabled
+         ng-checked
+         ng-readonly
+         ng-selected
+         ng-class
+         ng-style
+         ng-disabled
+         ng-readonly
+         ng-checked
+         ng-href
+         ng-src
+         ng-app
+         ng-controller
+         ng-include
+         ng-switch
+         ng-repeat
+         ng-view
+         ng-controller
+         ng-if
+         ng-switch
+         ng-view
+         ng-if
+         ng-repeat
+         ng-init
+         { { } }/ng-bind
+         ng-cloak
+         ng-bind-template
+         ng-model
+         ng-show/ng-hide
+         ng-change
+         ng-form
+         ng-click
+         ng-submit
+         ng-attr-(suffix)
+    </b>
 </div>
 <hr/>
 
